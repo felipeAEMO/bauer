@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bauer Collection's</title>
+    <style>
+        /* Variáveis CSS */
+        :root {
+            --primary-color: #1A237E; /* Azul escuro */
+            --secondary-color: #283593; /* Azul médio */
+            --accent-color: #E8EAF6; /* Azul claro */
+            --text-color: #ffffff; /* Branco para contraste */
+            --button-color: #64B5F6; /* Azul para CTA */
+        }
+
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+
+        }
+
+        /* Cabeçalho */
+        header {
+            padding: 20px;
+            background-color: var(--secondary-color);
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        /* Sessão de Introdução */
+        .intro {
+            padding: 50px 20px;
+            max-width: 800px;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            margin: 10px 0 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            background-color: var(--button-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #42A5F5;
+        }
+
+        /* Espaços para imagens e vídeo */
+        .image-section, .video-section {
+            padding: 40px 20px;
+            width: 90%;
+            max-width: 1200px;
+            background-color: var(--accent-color);
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+       
+
+        /* Sessão de Benefícios */
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: var(--secondary-color);
+            width: 100%;
+        }
+
+        .benefit-item {
+            flex: 1 1 200px;
+            max-width: 300px;
+            background-color: var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+            color: var(--primary-color);
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+            background-color: #0684eb;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 1em;
+        }
+
+        /* Rodapé */
+        footer {
+            padding: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+            background-color: var(--secondary-color);
+            width: 100%;
+            text-align: center;
+        }
+        /* Estilos para os ícones de redes sociais no rodapé */
+footer .social-media {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .social-media a img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); /* para combinar com fundo escuro */
+    transition: transform 0.2s;
+}
+
+footer .social-media a img:hover {
+    transform: scale(1.1);
+}
+
+/* Sessão de Benefícios */
+.benefits {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: var(--secondary-color);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    background-color: var(--accent-color);
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+.benefit-item img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.benefit-item h3 {
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+.benefit-item p {
+    font-size: 1em;
+}
+
+.video-section {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .slider-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .slider-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .slider-item p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .slider-item .price {
+            font-weight: bold;
+            color: #E63946;
+            margin-bottom: 10px;
+        }
+
+        .slider-item .colors, .slider-item .benefits {
+            font-size: 0.9rem;
+        }
+
+        .slider-item .buy-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #E63946;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .slider-item .buy-btn:hover {
+            background-color: #b82834;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #333;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+        header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+  <header>
+        <div class="logo">
+            <img src="./logo.jpeg" alt="Logo da Vestiva">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#camisetas">Camisetas</a></li>
+                <li><a href="#moletons">Moletons</a></li>
+                <li><a href="#regatas">Regatas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sessão de Introdução -->
+    <section class="intro">
+        <h2 >Descubra a Sua Nova Coleção Favorita!</h2>
+        <p>Explore uma seleção exclusiva de camisetas e acessórios que combinam estilo e personalidade. Venha conferir!</p>
+        <button class="cta-button"  >Confira Agora</button>
+    </section>
+
+    <!-- Seção de Imagem -->
+    <section class="image-section">
+        <h2 style="color: #0684eb;">Nossos Produtos</h2>
+        <div class=><img src="./page4.jpeg" width="1000px" alt=""></div>
+    </section>
+<!-- Sessão de Benefícios -->
+<section class="benefits">
+    <div class="benefit-item">
+        <img width="50" height="50" src="https://img.icons8.com/ios/50/t-shirt--v1.png" alt="t-shirt--v1"/>        <h3>Originais e Exclusivas</h3>
+        <p style="color: #0684eb;">Camisetas com designs únicos, feitas para você se destacar.</p>
+    </div>
+    <div class="benefit-item">
+        <img width="50" height="50" src="https://img.icons8.com/ios/50/cotton.png" alt="cotton"/>        <h3>Camisetas de Algodão</h3>
+        <p>Feitas com algodão de alta qualidade, proporcionando conforto máximo.</p>
+    </div>
+    <div class="benefit-item">
+        <img width="48" height="48" src="https://img.icons8.com/doodle/48/nature-care.png" alt="nature-care"/>        <h3>Eco Friendly</h3>
+        <p style="color: #0684eb;">Nossas camisetas são produzidas com materiais sustentáveis.</p>
+    </div>
+</section>
+
+<section class="image-section">
+    <h2 style="color: #0684eb;">Nossos Produtos</h2>
+    <div class=""><img src="./10.jpg" width="1000px" alt=""></div>
+</section>
+
+    <!-- Seção de Vídeo -->
+    <section class="video-section">
+        <h2 style="color: #0684eb;">Conheça os produtos da Bauer Collection's</h2>
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <!-- Slide 1 -->
+                <div class="slider-item">
+                    <img src="./93747.jpeg" width="500px" alt="Camiseta 1">
+                    <h3>Camiseta Básica</h3>
+                    <p class="price">R$ 49,90</p>
+                    <p class="colors">Cores: Preto, Branco, Azul</p>
+                    <p class="benefits">Benefícios: Confortável, 100% Algodão</p>
+                    <a href="link-para-compra1.html" class="buy-btn" target="_blank">Comprar Agora</a>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slider-item">
+                    <img src="./tanktop-mockup-on-a-man-0021.jpg" alt="Camiseta 2">
+                    <h3>Camiseta Estampada</h3>
+                    <p class="price">R$ 59,90</p>
+                    <p class="colors">Cores: Cinza, Verde, Vermelho</p>
+                    <p class="benefits">Benefícios: Estampa exclusiva, tecido leve</p>
+                    <a href="link-para-compra2.html" class="buy-btn" target="_blank">Comprar Agora</a>
+                </div>
+                <!-- Adicione mais slides conforme necessário -->
+            </div>
+            <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+            <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+        </div>
+    </section>
+
+    <!-- Sessão de Benefícios -->
+    <section class="benefits">
+        <div class="benefit-item">
+            <h3>Qualidade Premium</h3>
+            <p>Nossos produtos são feitos com os melhores materiais para garantir conforto e durabilidade.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>Estilo Exclusivo</h3>
+            <p>Designs que combinam com você e se destacam, onde quer que esteja.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>Entrega Rápida</h3>
+            <p>Com nosso serviço de entrega, seus produtos chegam rápido e com segurança.</p>
+        </div>
+    </section>
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slider = document.getElementById('slider');
+            const slides = document.querySelectorAll('.slider-item');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+    </script>
+
+    <!-- Rodapé -->
+
+<footer>
+    <p>&copy; 2024 Bauer Collection's. Todos os direitos reservados.</p>
+    <div class="social-media">
+        <a href="https://www.youtube.com/@bauerstore/shorts" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <path fill="#f44336" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5 V37z"></path><path fill="#fff" d="M36.499,25.498c-0.276-0.983-1.089-1.758-2.122-2.021C32.506,23,24,23,24,23s-8.506,0-10.377,0.478 c-1.032,0.263-1.846,1.037-2.122,2.021C11,27.281,11,31,11,31s0,3.719,0.501,5.502c0.276,0.983,1.089,1.758,2.122,2.021 C15.494,39,24,39,24,39s8.505,0,10.377-0.478c1.032-0.263,1.846-1.037,2.122-2.021C37,34.719,37,31,37,31S37,27.281,36.499,25.498z"></path><path fill="#f44336" d="M16.333 37L14.667 37 14.667 26.655 13 26.655 13 25 18 25 18 26.655 16.333 26.655zM23 37h-1.5l-.167-1.132C20.675 36.579 19.892 37 19.283 37c-.533 0-.908-.231-1.092-.653C18.083 36.083 18 35.687 18 35.092V27.5h1.667v7.757c.042.24.217.33.433.33.333 0 .867-.363 1.233-.843V27.5H23V37zM35 32.663v-2.701c0-.777-.192-1.338-.533-1.702-.458-.496-1.117-.76-1.942-.76-.842 0-1.492.264-1.967.76C30.2 28.623 30 29.218 30 29.995v4.593c0 .768.225 1.313.575 1.669C31.05 36.752 31.7 37 32.567 37c.858 0 1.533-.256 1.983-.785.2-.231.333-.496.392-.785C34.95 35.298 35 34.943 35 34.522h-1.667v.661c0 .38-.375.694-.833.694s-.833-.314-.833-.694v-2.52H35zM31.667 29.392c0-.388.375-.694.833-.694s.833.306.833.694v2.123h-1.667V29.392zM28.783 28.492c-.208-.646-.717-1.001-1.35-1.01-.808-.008-1.142.414-1.767 1.142V25H24v12h1.5l.167-1.034C26.192 36.611 26.875 37 27.433 37c.633 0 1.175-.331 1.383-.977.1-.348.175-.67.183-1.399V30.28C29 29.461 28.892 28.84 28.783 28.492zM27.333 34.41c0 .869-.2 1.167-.65 1.167-.258 0-.75-.174-1.017-.439v-5.686c.267-.265.758-.521 1.017-.521.45 0 .65.273.65 1.142V34.41z"></path><path fill="#fff" d="M15 9l1.835.001 1.187 5.712.115 0 1.128-5.711 1.856-.001L19 16.893V21h-1.823l-.003-3.885L15 9zM21.139 14.082c0-.672.219-1.209.657-1.606.437-.399 1.024-.6 1.764-.601.675 0 1.225.209 1.655.63.429.418.645.96.645 1.622l.003 4.485c0 .742-.209 1.326-.63 1.752C24.812 20.788 24.234 21 23.493 21c-.714 0-1.281-.221-1.712-.656-.428-.435-.64-1.023-.641-1.76l-.003-4.503L21.139 14.082 21.139 14.082zM22.815 18.746c0 .236.057.423.178.553.115.128.279.193.495.193.221 0 .394-.066.524-.201.129-.129.196-.314.196-.547l-.003-4.731c0-.188-.069-.342-.201-.459-.131-.116-.305-.175-.519-.175-.199 0-.361.06-.486.176-.124.117-.186.271-.186.459L22.815 18.746zM32 12v9h-1.425l-.227-1.1c-.305.358-.622.63-.953.815C29.067 20.901 28.747 21 28.437 21c-.384 0-.671-.132-.866-.394-.195-.259-.291-.65-.291-1.174L27.276 12h1.653l.004 6.825c0 .204.036.355.106.449.066.09.183.14.335.14.124 0 .278-.062.46-.186.188-.122.358-.281.512-.471L30.344 12 32 12z"></path>
+            </svg></a>
+        <a href="https://www.instagram.com/bauer_collection/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+            </svg></a>
+        <a href="https://www.tiktok.com/@bauer_collections" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+            <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z"></path>
+        </svg></a>
+        <a href="https://x.com/BAUER_OF1C1AL" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <linearGradient id="_osn9zIN2f6RhTsY8WhY4a_5MQ0gPAYYx7a_gr1" x1="10.341" x2="40.798" y1="8.312" y2="38.769" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#_osn9zIN2f6RhTsY8WhY4a_5MQ0gPAYYx7a_gr1)" d="M46.105,11.02c-1.551,0.687-3.219,1.145-4.979,1.362c1.789-1.062,3.166-2.756,3.812-4.758	c-1.674,0.981-3.529,1.702-5.502,2.082C37.86,8.036,35.612,7,33.122,7c-4.783,0-8.661,3.843-8.661,8.582	c0,0.671,0.079,1.324,0.226,1.958c-7.196-0.361-13.579-3.782-17.849-8.974c-0.75,1.269-1.172,2.754-1.172,4.322	c0,2.979,1.525,5.602,3.851,7.147c-1.42-0.043-2.756-0.438-3.926-1.072c0,0.026,0,0.064,0,0.101c0,4.163,2.986,7.63,6.944,8.419	c-0.723,0.198-1.488,0.308-2.276,0.308c-0.559,0-1.104-0.063-1.632-0.158c1.102,3.402,4.299,5.889,8.087,5.963	c-2.964,2.298-6.697,3.674-10.756,3.674c-0.701,0-1.387-0.04-2.065-0.122C7.73,39.577,12.283,41,17.171,41	c15.927,0,24.641-13.079,24.641-24.426c0-0.372-0.012-0.742-0.029-1.108C43.483,14.265,44.948,12.751,46.105,11.02"></path>
+            </svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61566625966801" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+            <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
+        </svg></a>
+        <a href="https://www.threads.net/@bauer_collection?xmt=AQGzY_eqXv1AK1yo_YgkE-621a0z3yZ09urt3TRpwAWsgQI" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <path d="M 11.5 6 C 8.4802259 6 6 8.4802259 6 11.5 L 6 14.660156 A 1.50015 1.50015 0 1 0 9 14.660156 L 9 11.5 C 9 10.101774 10.101774 9 11.5 9 L 36.5 9 C 37.898226 9 39 10.101774 39 11.5 L 39 25 A 1.50015 1.50015 0 1 0 42 25 L 42 11.5 C 42 8.4802259 39.519774 6 36.5 6 L 11.5 6 z M 24.162109 12.001953 C 20.643109 12.025953 17.931609 13.217922 16.099609 15.544922 C 14.485609 17.597922 13.652047 20.439719 13.623047 24.011719 C 13.651047 27.562719 14.484609 30.403078 16.099609 32.455078 C 17.930609 34.782078 20.643641 35.974047 24.181641 35.998047 C 27.309641 35.977047 29.520609 35.150266 31.349609 33.322266 C 33.779609 30.894266 33.703391 27.848562 32.900391 25.976562 C 32.320391 24.624562 31.223609 23.5305 29.724609 22.8125 C 29.689609 22.7945 29.653187 22.778719 29.617188 22.761719 C 29.353188 19.381719 27.403266 17.438969 24.197266 17.417969 C 22.253266 17.417969 20.632812 18.253484 19.632812 19.771484 C 19.520813 19.941484 19.565375 20.170109 19.734375 20.287109 L 21.402344 21.431641 C 21.485344 21.488641 21.587547 21.509234 21.685547 21.490234 C 21.783547 21.471234 21.872734 21.412125 21.927734 21.328125 C 22.531734 20.413125 23.495609 20.222656 24.224609 20.222656 C 25.110609 20.227656 25.768641 20.473125 26.181641 20.953125 C 26.404641 21.212125 26.575359 21.550891 26.693359 21.962891 C 25.936359 21.871891 25.131063 21.850437 24.289062 21.898438 C 21.183063 22.077437 19.185266 23.917516 19.322266 26.478516 C 19.391266 27.784516 20.041344 28.909531 21.152344 29.644531 C 22.070344 30.249531 23.249609 30.549469 24.474609 30.480469 C 26.095609 30.391469 27.370625 29.767953 28.265625 28.626953 C 28.838625 27.897953 29.225359 27.002344 29.443359 25.902344 C 29.865359 26.243344 30.175141 26.642703 30.369141 27.095703 C 30.824141 28.153703 30.848016 29.896172 29.416016 31.326172 C 28.122016 32.619172 26.552781 33.180266 24.175781 33.197266 C 21.533781 33.177266 19.543766 32.339031 18.259766 30.707031 C 17.040766 29.157031 16.409719 26.900906 16.386719 24.003906 C 16.409719 21.100906 17.040766 18.842969 18.259766 17.292969 C 19.543766 15.660969 21.533922 14.821734 24.169922 14.802734 C 26.834922 14.822734 28.862266 15.666547 30.197266 17.310547 C 30.850266 18.114547 31.350594 19.132844 31.683594 20.339844 C 31.738594 20.537844 31.944578 20.654516 32.142578 20.603516 L 34.097656 20.082031 C 34.194656 20.057031 34.276172 19.99225 34.326172 19.90625 C 34.375172 19.81825 34.387328 19.716141 34.361328 19.619141 C 33.930328 18.034141 33.246172 16.658344 32.326172 15.527344 C 30.444172 13.212344 27.705109 12.025953 24.162109 12.001953 z M 7.4765625 18.882812 A 1.50015 1.50015 0 0 0 6 20.404297 L 6 36.5 C 6 39.519774 8.4802259 42 11.5 42 L 36.5 42 C 39.519774 42 42 39.519774 42 36.5 L 42 32.787109 A 1.50015 1.50015 0 1 0 39 32.787109 L 39 36.5 C 39 37.898226 37.898226 39 36.5 39 L 11.5 39 C 10.101774 39 9 37.898226 9 36.5 L 9 20.404297 A 1.50015 1.50015 0 0 0 7.4765625 18.882812 z M 25.123047 24.673828 C 25.720047 24.673828 26.289312 24.720453 26.820312 24.814453 C 26.536313 27.228453 25.404266 27.623594 24.322266 27.683594 C 23.580266 27.712594 22.892469 27.527203 22.480469 27.158203 C 22.229469 26.933203 22.093172 26.653172 22.076172 26.326172 C 22.038172 25.605172 22.639359 24.798359 24.443359 24.693359 C 24.673359 24.680359 24.900047 24.673828 25.123047 24.673828 z"></path>
+            </svg></a>
+    </div>
+</footer>
+
+</body>
+</html>
+

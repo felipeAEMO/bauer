@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* Variáveis CSS */
+        :root {
+            --primary-color: #000;
+            --secondary-color: #333;
+            --accent-color: #fff;
+        }
+
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Cabeçalho */
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--secondary-color);
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        /* Sessão de Introdução */
+        .intro {
+            padding: 50px 20px;
+            max-width: 800px;
+        }
+
+        .intro h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            margin: 10px 0 20px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ddd;
+        }
+
+        /* Sessão de Benefícios */
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: var(--secondary-color);
+            width: 100%;
+        }
+
+        .benefit-item {
+            flex: 1 1 200px;
+            max-width: 300px;
+            background-color: var(--primary-color);
+            padding: 20px;
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+            border-color: #ddd;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 1em;
+        }
+
+        /* Rodapé */
+        footer {
+            padding: 20px;
+            font-size: 0.9em;
+            color: #bbb;
+            background-color: var(--secondary-color);
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Bem-vindo à Nossa Landing Page</h1>
+    </header>
+
+    <!-- Sessão de Introdução -->
+    <section class="intro">
+        <h2>Descubra a Solução Perfeita para Você!</h2>
+        <p>Nós oferecemos uma plataforma moderna e intuitiva para ajudá-lo a alcançar seus objetivos. Experimente agora e veja a diferença!</p>
+        <button class="cta-button">Experimente Gratuitamente</button>
+    </section>
+
+    <!-- Sessão de Benefícios -->
+    <section class="benefits">
+        <div class="benefit-item">
+            <h3>Fácil de Usar</h3>
+            <p>Nosso sistema é intuitivo e simples, permitindo que você comece rapidamente.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>Suporte 24/7</h3>
+            <p>Estamos aqui para ajudar a qualquer momento, com suporte dedicado.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>Personalização Completa</h3>
+            <p>Adaptável às suas necessidades, com uma vasta gama de personalizações.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
